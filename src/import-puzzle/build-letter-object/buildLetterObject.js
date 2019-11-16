@@ -1,5 +1,3 @@
-const { buildCoordinatePair } = require("../build-coordinate-pair/buildCoordinatePair");
-
 const buildLetterObject = letterArray => {
   let letterObject = {};
 
@@ -18,4 +16,13 @@ const buildLetterObject = letterArray => {
   return letterObject;
 };
 
-module.exports = { buildLetterObject };
+const buildCoordinatePair = (currentLetter, currentIndex, letterArray) => {
+  return {
+    letter: currentLetter,
+    x: currentIndex % Math.sqrt(letterArray.length),
+    y: Math.trunc(currentIndex / Math.sqrt(letterArray.length)),
+    tried: false,
+  };
+};
+
+module.exports = { buildLetterObject, buildCoordinatePair };

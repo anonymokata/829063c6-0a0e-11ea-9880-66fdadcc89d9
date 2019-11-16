@@ -1,5 +1,15 @@
-const { buildLetterObject } = require("./buildLetterObject");
+const _ = require("lodash");
+const { buildLetterObject, buildCoordinatePair } = require("./buildLetterObject");
 const { getTestLetterArray } = require("../test-data/testLetterArray");
+
+test("should return object with letter, x-coordinate, and y-coordinate given index and array", () => {
+  const testLetterArray = ["A", "Q", "T", "D", "J", "M", "R", "E", "F"];
+  const expectedCoordinatePair = { letter: "J", x: 1, y: 1, tried: false };
+
+  const coordinatePair = buildCoordinatePair("J", 4, testLetterArray);
+
+  expect(_.isEqual(coordinatePair, expectedCoordinatePair)).toBe(true);
+});
 
 test("should return object of coordinate pairs by letter given letter array", () => {
   const letterObject = buildLetterObject(getTestLetterArray());
