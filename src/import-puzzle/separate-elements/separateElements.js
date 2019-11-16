@@ -1,7 +1,6 @@
-const separateElementsFromRawPuzzleArrayByType = (type, rawArray) => {
+const separateElementsFromRawPuzzleArray = (type, rawArray) => {
   const elementArray = rawArray.filter(
-    element =>
-      (elementType.LETTERS === type && element.length === 1) || (elementType.WORDS === type && element.length > 1)
+    element => (elementType.LETTERS === type && element.length === 1) || (elementType.WORDS === type && element.length > 1)
   );
 
   if (elementArray.length === 0) {
@@ -18,4 +17,4 @@ const elementType = Object.freeze({
   LETTERS: "letters",
 });
 
-module.exports = { separateElementsFromRawPuzzleArrayByType, elementType };
+module.exports = { separateElementsFromRawPuzzleArray, elementType };
