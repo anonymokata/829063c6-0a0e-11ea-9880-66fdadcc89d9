@@ -3,7 +3,7 @@ const path = require("path");
 
 const importFromTextFileToArray = fileName => {
   try {
-    const filePath = path.join(__dirname, "../puzzle-text-files/", fileName);
+    const filePath = path.join(__dirname, "../../puzzle-text-files/", fileName);
 
     const fileBuffer = fs.readFileSync(filePath);
 

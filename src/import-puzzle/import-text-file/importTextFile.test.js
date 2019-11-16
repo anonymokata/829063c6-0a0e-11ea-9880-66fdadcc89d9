@@ -1,4 +1,4 @@
-const { importFromTextFileToArray } = require("./importPuzzle");
+const { importFromTextFileToArray } = require("./importTextFile");
 
 console.log = jest.fn();
 console.error = jest.fn();
