@@ -1,0 +1,28 @@
+{
+  "name": "word-search-solver",
+  "version": "1.0.0",
+  "description": "Given a text file consisting of a list of words, and a series of rows of single-character lists representing the word search grid, this program should search for the words in the grid and return a set of x,y coordinates for each word found.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrill-chalmers/word-search-solver.git"
+  },
+  "keywords": [
+    "kata",
+    "word-search"
+  ],
+  "author": "Terrill Chalmers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terrill-chalmers/word-search-solver/issues"
+  },
+  "homepage": "https://github.com/terrill-chalmers/word-search-solver#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1"
+  }
+}
