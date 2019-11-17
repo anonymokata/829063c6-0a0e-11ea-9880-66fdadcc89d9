@@ -1,23 +1,24 @@
 const { createCandidatePairs } = require("../create-candidate-pairs/createCandidatePairs");
 
 const addNextPair = (searchWord, searchPath, letterObject) => {
-  const searchWordArray = searchWord.split("");
-  const nextLetterPairs = letterObject[searchWordArray[searchPath.length]];
+  const nextLetterPairs = letterObject[searchWord.split("")[searchPath.length]];
   const candidates = createCandidatePairs(searchPath);
   let candidateIndex = 0;
-  let keepSearching = true;
 
-  while (keepSearching && searchPath.length < searchWord.length && candidateIndex < candidates.length) {
+  while (searchPath.length < searchWord.length && candidateIndex < candidates.length) {
     let indexOfMatch = getIndexOfMatch(candidates[candidateIndex], nextLetterPairs);
     let matchedPair = nextLetterPairs[indexOfMatch];
 
     if (indexOfMatch >= 0) {
       matchedPair.tried = true;
       searchPath.push(matchedPair);
-      keepSearching = false;
-    } else {
-      candidateIndex++;
+
+      addNextPair(searchWord, searchPath, letterObject);
+    } else if (candidateIndex === candidates.length - 1) {
+      //all the candidates have been tried. The last element on the searchPath is wrong and needs to be removed.
+      searchPath.pop();
     }
+    candidateIndex++;
   }
 
   return searchPath;
