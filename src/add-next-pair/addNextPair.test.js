@@ -21,3 +21,16 @@ test("should not add next pair to the searchPath given the searchWord is JULIET 
 
   expect(JSON.stringify(result)).toBe(JSON.stringify([{ x: 17, y: 8, tried: true }]));
 });
+
+test("should add next pair to the searchPath given the search word is ALPHA and the search path contains the correct first letter pair", () => {
+  const searchPath = [{ x: 13, y: 13, tried: true }];
+
+  const result = addNextPair("ALPHA", searchPath, getTestLetterObject());
+
+  expect(JSON.stringify(result)).toBe(
+    JSON.stringify([
+      { x: 13, y: 13, tried: true },
+      { x: 14, y: 14, tried: true },
+    ])
+  );
+});
