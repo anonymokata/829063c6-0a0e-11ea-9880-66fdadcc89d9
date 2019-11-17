@@ -1,4 +1,4 @@
-const { getIndexOfMatch } = require("./getIndexOfMatch");
+const { getIndexOfMatch } = require("./addNextPair");
 const { getTestLetterObject } = require("../test-data/testLetterObject");
 
 const testLetterObject = getTestLetterObject();

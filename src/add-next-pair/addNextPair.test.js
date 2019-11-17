@@ -1,10 +1,10 @@
 const { addNextPair } = require("./addNextPair");
 const { getTestLetterObject } = require("../test-data/testLetterObject");
 
-test("should add next pair to the searchPath given the next letter is U and the search path contains the correct first letter pair", () => {
+test("should add next pair to the searchPath given the searchWord is JULIET and the search path contains the correct first letter pair", () => {
   const searchPath = [{ x: 2, y: 1, tried: true }];
 
-  const result = addNextPair("U", 6, searchPath, getTestLetterObject());
+  const result = addNextPair("JULIET", searchPath, getTestLetterObject());
 
   expect(JSON.stringify(result)).toBe(
     JSON.stringify([
@@ -14,10 +14,10 @@ test("should add next pair to the searchPath given the next letter is U and the 
   );
 });
 
-test("should not add next pair to the searchPath given the next letter is U and the search path contains the incorrect first letter pair", () => {
+test("should not add next pair to the searchPath given the searchWord is JULIET and the search path contains the incorrect first letter pair", () => {
   const searchPath = [{ x: 17, y: 8, tried: true }];
 
-  const result = addNextPair("U", 6, searchPath, getTestLetterObject());
+  const result = addNextPair("JULIET", searchPath, getTestLetterObject());
 
   expect(JSON.stringify(result)).toBe(JSON.stringify([{ x: 17, y: 8, tried: true }]));
 });

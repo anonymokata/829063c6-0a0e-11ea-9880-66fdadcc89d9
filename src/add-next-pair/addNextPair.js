@@ -1,13 +1,13 @@
 const { createCandidatePairs } = require("../create-candidate-pairs/createCandidatePairs");
-const { getIndexOfMatch } = require("../get-index-of-match/getIndexOfMatch");
 
-const addNextPair = (nextLetter, searchWordLength, searchPath, letterObject) => {
-  const nextLetterPairs = letterObject[nextLetter];
+const addNextPair = (searchWord, searchPath, letterObject) => {
+  const searchWordArray = searchWord.split("");
+  const nextLetterPairs = letterObject[searchWordArray[searchPath.length]];
   const candidates = createCandidatePairs(searchPath);
   let candidateIndex = 0;
   let keepSearching = true;
 
-  while (keepSearching && searchPath.length < searchWordLength && candidateIndex < candidates.length) {
+  while (keepSearching && searchPath.length < searchWord.length && candidateIndex < candidates.length) {
     let indexOfMatch = getIndexOfMatch(candidates[candidateIndex], nextLetterPairs);
     let matchedPair = nextLetterPairs[indexOfMatch];
 
@@ -23,4 +23,10 @@ const addNextPair = (nextLetter, searchWordLength, searchPath, letterObject) => 
   return searchPath;
 };
 
-module.exports = { addNextPair };
+const getIndexOfMatch = (candidate, arrayOfPairs) => {
+  return arrayOfPairs.findIndex(currentPair => {
+    return currentPair.x === candidate.x && currentPair.y === candidate.y;
+  });
+};
+
+module.exports = { addNextPair, getIndexOfMatch };
