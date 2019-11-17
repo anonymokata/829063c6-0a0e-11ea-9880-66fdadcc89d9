@@ -14,7 +14,7 @@ const searchForWord = (searchWord, letterObject) => {
     firstLetterPairIndex++;
   } while (searchPath.length < searchWord.length && firstLetterPairIndex < firstLetterPairs.length);
 
-  return searchPath;
+  return formatSearchPath(searchWord, searchPath);
 };
 
 const formatSearchPath = (searchWord, searchPath) => {
