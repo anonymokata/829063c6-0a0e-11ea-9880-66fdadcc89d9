@@ -1,6 +1,6 @@
 const { importFromTextFileToArray } = require("../import-text-file/importTextFile");
 const { separateElementsFromRawPuzzleArray, elementType } = require("../separate-elements/separateElements");
-const { getTestRawArray } = require("../test-data/testRawArray");
+const { getTestRawArray } = require("../../test-data/testRawArray");
 
 console.error = jest.fn();
 

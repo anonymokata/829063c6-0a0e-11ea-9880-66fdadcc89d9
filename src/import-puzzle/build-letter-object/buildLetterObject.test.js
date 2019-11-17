@@ -2,7 +2,7 @@ const _ = require("lodash");
 const { buildLetterObject, buildCoordinatePair } = require("./buildLetterObject");
 const { importFromTextFileToArray } = require("../import-text-file/importTextFile");
 const { separateElementsFromRawPuzzleArray, elementType } = require("../separate-elements/separateElements");
-const { getTestLetterArray } = require("../test-data/testLetterArray");
+const { getTestLetterArray } = require("../../test-data/testLetterArray");
 
 test("should return object with letter, x-coordinate, and y-coordinate given index and array", () => {
   const testLetterArray = ["A", "Q", "T", "D", "J", "M", "R", "E", "F"];
