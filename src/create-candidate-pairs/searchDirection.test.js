@@ -1,4 +1,4 @@
-const { calculateDirection, searchDirection } = require("./searchDirection");
+const { calculateDirection, searchDirection } = require("./createCandidatePairs");
 
 test("should return horizontal given first two letters of searchPath are in horizontal alignment in samplePuzzle", () => {
   const searchPath = [
