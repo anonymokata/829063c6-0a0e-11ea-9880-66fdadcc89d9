@@ -27,9 +27,13 @@ test("should import contents of samplePuzzle.txt into array given file is locate
 test("should write error to console given no matching fileName exists in puzzle-text-files directory", () => {
   const puzzleTextFile = "missingPuzzleData.txt";
 
-  importFromTextFileToArray("missingPuzzleData.txt");
+  try {
+    importFromTextFileToArray(puzzleTextFile);
+  } catch (e) {
+    console.error(e.message);
+  }
 
   //should log unsuccessful loading of puzzle
   expect(console.error).toHaveBeenCalledTimes(1);
-  expect(console.error).toHaveBeenCalledWith(`${puzzleTextFile} not found.`);
+  expect(console.error).toHaveBeenCalledWith(`${puzzleTextFile} not found in puzzle-text-files directory.`);
 });

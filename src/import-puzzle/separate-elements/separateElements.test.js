@@ -20,10 +20,14 @@ test("should write error message to console given raw array contains no words", 
   let badTestArray = [...getTestRawArray()];
   badTestArray.splice(0, 10);
 
-  separateElementsFromRawPuzzleArray(elementType.WORDS, badTestArray);
+  try {
+    separateElementsFromRawPuzzleArray(elementType.WORDS, badTestArray);
+  } catch (e) {
+    console.error(e.message);
+  }
 
   expect(console.error).toHaveBeenCalledTimes(1);
-  expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It contains no words");
+  expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It contains no words.");
 });
 
 test("should create array of 400 letters given array of words and letters", () => {
@@ -38,17 +42,25 @@ test("should write error message to console given raw array contains no letters"
   let badTestArray = [...getTestRawArray()];
   badTestArray.length = 10;
 
-  separateElementsFromRawPuzzleArray(elementType.LETTERS, badTestArray);
+  try {
+    separateElementsFromRawPuzzleArray(elementType.LETTERS, badTestArray);
+  } catch (e) {
+    console.error(e.message);
+  }
 
   expect(console.error).toHaveBeenCalledTimes(1);
-  expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It contains no letters");
+  expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It contains no letters.");
 });
 
 test("should return error message given puzzle is not square", () => {
   let badTestArray = [...getTestRawArray()];
   badTestArray.length = badTestArray.length - 3;
 
-  separateElementsFromRawPuzzleArray(elementType.LETTERS, badTestArray);
+  try {
+    separateElementsFromRawPuzzleArray(elementType.LETTERS, badTestArray);
+  } catch (e) {
+    console.error(e.message);
+  }
 
   expect(console.error).toHaveBeenCalledTimes(1);
   expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It is not square.");

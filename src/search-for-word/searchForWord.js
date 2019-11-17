@@ -18,12 +18,12 @@ const searchForWord = (searchWord, letterObject) => {
 };
 
 const formatSearchPath = (searchWord, searchPath) => {
-  try {
+  if (searchPath.length < 2) {
+    return `${searchWord} not found in puzzle.`;
+  } else {
     return searchPath.reduce((formattedSolution, currentPair, currentIndex) => {
       return formattedSolution.concat(`(${currentPair.x},${currentPair.y})${currentIndex < searchWord.length - 1 ? "," : ""}`);
     }, `${searchWord}: `);
-  } catch (e) {
-    // report error
   }
 };
 

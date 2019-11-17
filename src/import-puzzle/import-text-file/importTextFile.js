@@ -15,7 +15,7 @@ const importFromTextFileToArray = fileName => {
 
     return stringWithoutLineBreakCharacters.split(",");
   } catch (e) {
-    console.error(`${fileName} not found.`);
+    throw new Error(`${fileName} not found in puzzle-text-files directory.`);
   }
 };
 

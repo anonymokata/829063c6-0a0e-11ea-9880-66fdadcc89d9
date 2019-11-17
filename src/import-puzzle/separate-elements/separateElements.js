@@ -4,11 +4,11 @@ const separateElementsFromRawPuzzleArray = (type, rawArray) => {
   );
 
   if (elementArray.length === 0) {
-    console.error(`Puzzle is invalid. It contains no ${type}`);
+    throw new Error(`Puzzle is invalid. It contains no ${type}.`);
   } else if (elementType.LETTERS === type && Math.sqrt(elementArray.length) % 1 !== 0) {
-    console.error(`Puzzle is invalid. It is not square.`);
+    throw new Error(`Puzzle is invalid. It is not square.`);
   } else {
-    return elementArray;
+    return elementArray.map(element => element.trim());
   }
 };
 
