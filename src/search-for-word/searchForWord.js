@@ -17,4 +17,14 @@ const searchForWord = (searchWord, letterObject) => {
   return searchPath;
 };
 
-module.exports = { searchForWord };
+const formatSearchPath = (searchWord, searchPath) => {
+  try {
+    return searchPath.reduce((formattedSolution, currentPair, currentIndex) => {
+      return formattedSolution.concat(`(${currentPair.x},${currentPair.y})${currentIndex < searchWord.length - 1 ? "," : ""}`);
+    }, `${searchWord}: `);
+  } catch (e) {
+    // report error
+  }
+};
+
+module.exports = { searchForWord, formatSearchPath };
