@@ -6,7 +6,7 @@ To test and use application follow the steps below.
 <ol>
 <li>Ensure Node.js is installed on your machine. From the terminal type 'node -v'. Go to https://nodejs.org for more information.</li>
 <li>Ensure npm is installed on your machine. From the terminal type 'npm -v'. Go to https://www.npmjs.com/get-npm for more information.</li>
-<li>Clone this repository on your local machine. Goto https://www.git-scm.com/docs/git-clone for more information.</li>
+<li>Clone this repository on your local machine. Go to https://www.git-scm.com/docs/git-clone for more information.</li>
 <li>Change directory into word-search-solver/. From the terminal type 'cd word-search-solver'.</li>
 <li>Install necessary dependencies. From the terminal type 'npm i'.</li>
 <li>Type 'node index.js' to begin the application.</li>
