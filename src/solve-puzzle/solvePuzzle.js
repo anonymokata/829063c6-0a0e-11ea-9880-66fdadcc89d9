@@ -13,7 +13,6 @@ const solvePuzzle = puzzleTextFile => {
 
     const foundWords = wordArray.map(searchWord => searchForWord(searchWord, letterObject).toString());
 
-    console.log(`${puzzleTextFile} solved.`);
     return foundWords.join("\n");
   } catch (e) {
     console.error(e.message);

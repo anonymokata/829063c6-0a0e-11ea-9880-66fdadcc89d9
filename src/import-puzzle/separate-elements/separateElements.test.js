@@ -66,8 +66,8 @@ test("should return error message given puzzle is not square", () => {
   expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It is not square.");
 });
 
-test("should return arrays of words and letters given 'samplePuzzle.txt' file is located in puzzle-text-files directory", () => {
-  const puzzleTextFile = "samplePuzzle.txt";
+test("should return arrays of words and letters given 'natoAlphabetPuzzle.txt' file is located in puzzle-text-files directory", () => {
+  const puzzleTextFile = "natoAlphabetPuzzle.txt";
 
   const rawArray = importFromTextFileToArray(puzzleTextFile);
 

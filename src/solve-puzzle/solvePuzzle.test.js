@@ -10,7 +10,7 @@ afterEach(() => {
 });
 
 test("should solve puzzle given text file is in puzzle-text-files directory", () => {
-  const puzzleTextFile = "samplePuzzle.txt";
+  const puzzleTextFile = "natoAlphabetPuzzle.txt";
 
   const result = solvePuzzle(puzzleTextFile);
 
@@ -18,7 +18,7 @@ test("should solve puzzle given text file is in puzzle-text-files directory", ()
 });
 
 test("should solve example Star Trek puzzle given text file is in puzzle-text-files directory", () => {
-  const puzzleTextFile = "exampleStarTrekPuzzle.txt";
+  const puzzleTextFile = "starTrekPuzzle.txt";
 
   const result = solvePuzzle(puzzleTextFile);
 
@@ -45,7 +45,7 @@ test("should write error to console given text file is empty", () => {
 });
 
 test("should write error to console given text file contains no words", () => {
-  const puzzleTextFile = "wordlessPuzzle.txt";
+  const puzzleTextFile = "missingWordPuzzle.txt";
 
   solvePuzzle(puzzleTextFile);
 
@@ -54,7 +54,7 @@ test("should write error to console given text file contains no words", () => {
 });
 
 test("should write error to console given text file contains no letters", () => {
-  const puzzleTextFile = "letterlessPuzzle.txt";
+  const puzzleTextFile = "missingLetterPuzzle.txt";
 
   solvePuzzle(puzzleTextFile);
 
@@ -62,10 +62,19 @@ test("should write error to console given text file contains no letters", () => 
   expect(console.error).toHaveBeenCalledWith(`Puzzle is invalid. It contains no letters.`);
 });
 
+test("should return error message given puzzle is not square", () => {
+  const puzzleTextFile = "rectanglePuzzle.txt";
+
+  solvePuzzle(puzzleTextFile);
+
+  expect(console.error).toHaveBeenCalledTimes(1);
+  expect(console.error).toHaveBeenCalledWith("Puzzle is invalid. It is not square.");
+});
+
 test("should include note about a word not found in puzzle given text file contains a word not in the puzzle", () => {
-  const puzzleTextFile = "missingWordPuzzle.txt";
+  const puzzleTextFile = "unfoundWordPuzzle.txt";
 
   const result = solvePuzzle(puzzleTextFile);
 
-  expect(result.includes("ZULU not found in puzzle.")).toBe(true);
+  expect(result.includes("KILO not found in puzzle.")).toBe(true);
 });

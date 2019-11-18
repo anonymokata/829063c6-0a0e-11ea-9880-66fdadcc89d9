@@ -24,7 +24,7 @@ test("should return object of coordinate pairs by letter given letter array", ()
 });
 
 test("should return letterObject given text file is in puzzle-text-files directory", () => {
-  const puzzleTextFile = "samplePuzzle.txt";
+  const puzzleTextFile = "natoAlphabetPuzzle.txt";
 
   const rawArray = importFromTextFileToArray(puzzleTextFile);
 

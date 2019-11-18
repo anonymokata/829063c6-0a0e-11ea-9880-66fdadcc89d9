@@ -7,8 +7,8 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-test("should import contents of samplePuzzle.txt into array given file is located in puzzle-text-files directory", () => {
-  const puzzleTextFile = "samplePuzzle.txt";
+test("should import contents of natoAlphabetPuzzle.txt into array given file is located in puzzle-text-files directory", () => {
+  const puzzleTextFile = "natoAlphabetPuzzle.txt";
 
   const rawPuzzleArray = importFromTextFileToArray(puzzleTextFile);
 
@@ -18,10 +18,6 @@ test("should import contents of samplePuzzle.txt into array given file is locate
   //array elements should range from "ALPHA" to "K"
   expect(rawPuzzleArray[0]).toBe("ALPHA");
   expect(rawPuzzleArray[rawPuzzleArray.length - 1]).toBe("K");
-
-  //should log successful loading of puzzle
-  expect(console.log).toHaveBeenCalledTimes(1);
-  expect(console.log).toHaveBeenCalledWith(`${puzzleTextFile} loaded.`);
 });
 
 test("should write error to console given no matching fileName exists in puzzle-text-files directory", () => {
