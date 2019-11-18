@@ -3,7 +3,7 @@ const path = require("path");
 
 const importFromTextFileToArray = fileName => {
   try {
-    const filePath = path.join(__dirname, "../../puzzle-text-files/", fileName);
+    const filePath = path.join(__dirname, "../../../puzzle-text-files/", fileName);
 
     const fileBuffer = fs.readFileSync(filePath);
 
@@ -11,11 +11,9 @@ const importFromTextFileToArray = fileName => {
 
     const stringWithoutLineBreakCharacters = commaSeparatedLetterString.replace(/\n/g, ",");
 
-    console.log(`${fileName} loaded.`);
-
     return stringWithoutLineBreakCharacters.split(",");
   } catch (e) {
-    console.error(`${fileName} not found.`);
+    throw new Error(`${fileName} not found in puzzle-text-files directory.`);
   }
 };
 

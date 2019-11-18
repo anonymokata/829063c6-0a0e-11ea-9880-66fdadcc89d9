@@ -1,0 +1,4 @@
+ART,RAT,TAR
+R,H,A
+A,R,Y
+T,A,R
